@@ -12,7 +12,7 @@ if  [ -z "$ZU_DEFAULT_PASSWORD"  ]
 then export ZU_DEFAULT_PASSWORD=zero-ui
 fi
 
-mkdir /app/frontend/build/static/media/
+mkdir -p /app/frontend/build/static/media/
 cp /var/lib/zerotier-one/planet /app/frontend/build/static/media/planet
 js=$(grep -ors "Please Log In to continue" /app|cut -d":" -f1)
 sed -i "s/Please Log In to continue/\/app\/static\/media\/planet /g" $js
